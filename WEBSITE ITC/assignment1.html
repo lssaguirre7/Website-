@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Temperature Converter</title>
+</head>
+<body>
+
+<h1>Temperature Converter</h1>
+
+<form>
+ <label for="temp">Enter Temperature:</label><br>
+ <input type="text" id="temp" name="temp"><br>
+ <label for="from">Convert From:</label><br>
+ <select id="from" name="from">
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="celsius">Celsius</option>
+    <option value="meters">Meters</option>
+    <option value="feet">Feet</option>
+ </select><br>
+ <label for="to">Convert To:</label><br>
+ <select id="to" name="to">
+    <option value="fahrenheit">Fahrenheit</option>
+    <option value="celsius">Celsius</option>
+    <option value="meters">Meters</option>
+    <option value="feet">Feet</option>
+ </select><br>
+ <input type="button" value="Convert" onclick="convertTemp()">
+</form>
+
+<p id="result"></p>
+
+<script>
+function convertTemp() {
+ var temp = parseFloat(document.getElementById("temp").value);
+ var from = document.getElementById("from").value;
+ var to = document.getElementById("to").value;
+
+ if (from === "fahrenheit" && to === "celsius") {
+    var result = (temp - 32) * 5 / 9;
+ } else if (from === "celsius" && to === "fahrenheit") {
+    var result = (temp * 9 / 5) + 32;
+ } else if (from === "meters" && to === "feet") {
+    var result = temp * 3.28084;
+ } else if (from === "feet" && to === "meters") {
+    var result = temp / 3.28084;
+ }
+
+ document.getElementById("result").innerHTML = "Result: " + result.toFixed(2);
+}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html> 
+<html lang="en">
+<head> 
+   <meta charset="UTF-8">
+   <meta name="viewport" 
+content="width=device-width, initial-scale=1.0"> 
+<title>Home</title> <style> .home { background-color: #4c93af; color: white; display: block; margin: 20px; padding: 10px; text-align: center; text-decoration: none; font-size: 16px; } </style> </head> <body>
+   <a href="index.html" class="home">Home</a>
+   
+</body>
